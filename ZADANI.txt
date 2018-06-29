@@ -1,0 +1,29 @@
+Ukol:
+=====
+
+V balicku mate jednoduchy web projekt buildovany mavenom. V eclipse existuje moznost importu maven 
+projektu cez File -> Import -> Maven -> Existing Maven project. Ak vam vyhovuje iny sposob
+buildu aplikacie, pouzite ho, sposob buildovania nas nezaujima.
+
+Doplnte do tridy cz.client.StoreContact implementaci, ktora nacita parametre firstName, lastName a email 
+z HTTP GET requestu a prida riadok na koniec CSV suboru v tom pripade, ze riadok s rovnakym obsahom uz v subore este neexistuje. 
+CSV subor by sa mal dat otvorit v beznom office balicku a mal by mat kodovani windows-1250, oddelovac zaznamu znak ','
+a mal by byt je umistnen v systemovom temp adresari pod nazvom "contacts.csv".
+
+Mozete pouzit akekolvek volne siritelne kniznice a frameworky z maven repozitara, ktore vam ulahcia pracu.
+
+Priklad vstupu:
+http://localhost:8080/Contacts/contact?firstName=jmeno&lastName=pří­jmení­&email=email@email.cz
+http://localhost:8080/Contacts/contact?firstName=Franta&lastName=Novák&email=franta.novak@email.cz
+
+Priklad vystupu:
+==========
+jmeno,pří­jmení­,email@email.cz
+Franta,Novák,franta.novak@email.cz
+==========
+
+Poznamka:
+Ak sa Vam nejaka cast ulohy zda prilis zlozita, ulohu si zjednoduste. Zaujima nas hlavne, akym stylom pisete kod. 
+Nechceme, aby ste uplnym vyriesenim ulohy stratili vela Vaseho casu. (napr. ak nemate vela skusenosti s web aplikaciami, 
+rieste ulohu ako Java command line nastroj pricom parametre prikazu by boli jednotlive hodnoty).
+ 
